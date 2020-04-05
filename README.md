@@ -372,7 +372,7 @@ Ecrire une règle qui journalise (sans alerter) un message à chaque fois que Wi
 ---
 
 **Reponse :**  
-log tcp 192.160. any -> 91.198.174.192 any (msg:"Mon nom!"; content:"Rubinstein"; sid:4000015; rev:1;)
+log tcp 91.198.174.192 any -> 192.134.221.99  any (msg:"Wikipedia";)
 ---
 
 --
@@ -496,7 +496,9 @@ Faire des recherches à propos des outils `fragroute` et `fragtest`.
 
 ---
 
-**Reponse :**  
+**Reponse : fragroute intercepts, modifies, and rewrites egress traffic destined for a specified host, implementing most of the attacks described in the Secure Networks “Insertion, Evasion, and Denial of Service: Eluding Network Intrusion Detection” paper of January 1998.
+
+En gros ca contourne les NIDs (fragtest aussi)**  
 
 ---
 
@@ -505,7 +507,7 @@ Faire des recherches à propos des outils `fragroute` et `fragtest`.
 
 ---
 
-**Reponse :**  
+**Reponse :Ils fonctionnent en fractionnant les paquets, puis tentent de contourner les regles mises en place par avec ces fractions de paquets **  
 
 ---
 
@@ -514,7 +516,13 @@ Faire des recherches à propos des outils `fragroute` et `fragtest`.
 
 ---
 
-**Reponse :**  
+**Reponse : Il s'agit du moyen de "défense" de snort. C'est un module de snort qui a pour but (principal) d'empecher les stratégies du dessus:
+
+The frag3 preprocessor is a target-based IP defragmentation module for Snort. Frag3 is designed with the following goals:
+
+1) Faster execution with less complex data management.
+
+2) Target-based host modeling anti-evasion techniques.**  
 
 ---
 
@@ -547,7 +555,7 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-**Reponse :**  
+**Reponse : il sert simplement à analyser les partie non chifrées de paquest sécurisé SSL/TLS (typiquement le header) **  
 
 ---
 
@@ -556,18 +564,18 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-**Reponse :**  
+**Reponse : Comme son nom le sous-entend, elle filtre les données sensibles (identité, numéro telephone/bancaire, email et autres) **  
 
 ---
 
 ### Conclusions
 
 
-**Question 27: Donnez-nous vos conclusions et votre opinion à propos de snort**
+**Question 27: Donnez-nous vos conclusions et votre opinion à propos de snort **
 
 ---
 
-**Reponse :**  
+**Reponse : Snort semble être très complet et puissant, mais tout aussi compliqué. Le nombre de possibilité donne parfois le vertige. **  
 
 ---
 
