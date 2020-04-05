@@ -384,7 +384,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse : alert icmp  !"adresss ip station" any -> any any (msg: "ICMP"; sid:1000017;) **  
+**Reponse : alert icmp !"adresss ip station" any -> any any (msg: "ICMP"; sid:1000017;) **  
 
 ---
 
@@ -425,7 +425,7 @@ Modifier votre règle pour que les pings soient détectés dans les deux sens.
 
 ---
 
-**Reponse :**  
+**Reponse : alert icmp any any -> any any (msg: "ICMP"; sid:1000017;)**  
 
 ---
 
