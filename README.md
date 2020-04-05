@@ -334,7 +334,7 @@ Aller à un site web contenant dans son text votre nom ou votre mot clé que vou
 
 ---
 
-**Reponse :**  
+**Reponse : Mon terminal n'affiche rien.**  
 
 ---
 
@@ -355,7 +355,8 @@ Aller au répertoire /var/log/snort. Ouvrir le fichier `alert`. Vérifier qu'il 
 
 ---
 
-**Reponse :**  
+**Reponse :[**] [1:4000015:1] Mon nom! [**] **  le premier numéro c'est le Generator Id qui représente le componet de snort qui a gébnérer l'alerte. Dans ce cas ci le numéro 1 c'est GENERATOR_SNORT_ENGINE.
+Le deuxième nombre c'est le SID qu'on a défini et le troisième nombre c'est le revision ID qu'on a aussi défini. Mon nom! correspond au message qu'on a défini.
 
 ---
 
@@ -371,7 +372,7 @@ Ecrire une règle qui journalise (sans alerter) un message à chaque fois que Wi
 ---
 
 **Reponse :**  
-
+log tcp 192.160. any -> 91.198.174.192 any (msg:"Mon nom!"; content:"Rubinstein"; sid:4000015; rev:1;)
 ---
 
 --
