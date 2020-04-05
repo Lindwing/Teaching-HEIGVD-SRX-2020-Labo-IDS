@@ -371,7 +371,7 @@ Ecrire une règle qui journalise (sans alerter) un message à chaque fois que Wi
 
 ---
 
-**Reponse : log tcp adresss ip station any -> 77.56.228.93 any (msg:"Wikipedia"; sid:4000016;). Il a été journalisé dans un fichier log dans /var/snort/ . le paquet envoyé par wikipedia**  
+**Reponse : log tcp "adresss ip station" any -> 77.56.228.93 any (msg:"Wikipedia"; sid:4000016;). Il a été journalisé dans un fichier log dans /var/snort/ . le paquet envoyé par wikipedia**  
 ---
 
 --
@@ -384,7 +384,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse :**  
+**Reponse : alert icmp  !"adresss ip station" any -> any any (msg: "ICMP"; sid:1000017;) **  
 
 ---
 
@@ -393,7 +393,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse :**  
+**Reponse : le ! devant l'adresse ip de la machine veut dire que ça peut-être tout sauf cette adresse ip **  
 
 ---
 
@@ -402,7 +402,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse :**  
+**Reponse : dans /var/log/snort/alert **  
 
 ---
 
@@ -411,7 +411,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse :**  
+**Reponse :le contenu de l'alerte **  
 
 ---
 
