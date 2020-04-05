@@ -324,7 +324,7 @@ sudo snort -c myrules.rules -i eth0
 
 ---
 
-**Reponse :**  
+**Reponse : Il annonce qu'il initialise snort, puis il initialise les règles, puis il affiche un tableau avec le récapulatif des rule port, puis il met des informations sur la config des filtres, puis il affiche l'ordre d'application des règles et vérifie les configurations preprocesseurs, puis un tableau Port Based Pattern Matching Memory, lance DAQ et affiche la version de snort.**  
 
 ---
 
