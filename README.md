@@ -334,7 +334,7 @@ Aller à un site web contenant dans son text votre nom ou votre mot clé que vou
 
 ---
 
-**Reponse : Mon terminal n'affiche rien.**  
+**Reponse : Mon terminal n'affiche rien. Je ne sais pas pourquoi.**  
 
 ---
 
@@ -357,6 +357,7 @@ Aller au répertoire /var/log/snort. Ouvrir le fichier `alert`. Vérifier qu'il 
 
 **Reponse :[**] [1:4000015:1] Mon nom! [**] **  le premier numéro c'est le Generator Id qui représente le componet de snort qui a gébnérer l'alerte. Dans ce cas ci le numéro 1 c'est GENERATOR_SNORT_ENGINE.
 Le deuxième nombre c'est le SID qu'on a défini et le troisième nombre c'est le revision ID qu'on a aussi défini. Mon nom! correspond au message qu'on a défini.
+La deuxième ligne défini l'importance de l'alerte et la troisième la date du log. La dernière ligne contient des informations contenu dans le paquet ip (protocole,id,etc.)
 
 ---
 
@@ -371,7 +372,7 @@ Ecrire une règle qui journalise (sans alerter) un message à chaque fois que Wi
 
 ---
 
-**Reponse : log tcp "adresss ip station" any -> 77.56.228.93 any (msg:"Wikipedia"; sid:4000016;). Il a été journalisé dans un fichier log dans /var/snort/ . le paquet envoyé par wikipedia**  
+**Reponse : log tcp any any -> 91.198.174.192 any (msg:"Wikipedia"; sid:4000016;). Il a été journalisé dans un fichier snort.log.xxxx dans /var/snort/ . le paquet envoyé est enregistré**  
 ---
 
 --
@@ -384,7 +385,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse : alert icmp !"adresss ip station" any -> any any (msg: "ICMP"; sid:1000017;) **  
+**Reponse : alert icmp any any -> 192.168.0.115 any (msg: "ICMP"; sid:1000017;) **  
 
 ---
 
@@ -393,7 +394,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse : le ! devant l'adresse ip de la machine veut dire que ça peut-être tout sauf cette adresse ip **  
+**Reponse : la flèche -> permet de définir que les paquets avec comme ip de destination l'ip de notre station **  
 
 ---
 
@@ -402,7 +403,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse : dans /var/log/snort/alert **  
+**Reponse : dans /var/log/snort/alert  et dans /var/log/snort/snort.log.xxxx**  
 
 ---
 
@@ -411,7 +412,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse :le contenu de l'alerte **  
+**Reponse :le contenu de l'alerte et le paquet qui provoqué l'alerte**  
 
 ---
 
@@ -425,7 +426,7 @@ Modifier votre règle pour que les pings soient détectés dans les deux sens.
 
 ---
 
-**Reponse : alert icmp any any -> any any (msg: "ICMP"; sid:1000017;)**  
+**Reponse : alert icmp any any <> 192.168.0.115 any (msg: "ICMP"; sid:1000017;) nous avons remplacé la flèche par <> ce qui indique les deux directions**  
 
 ---
 
@@ -440,7 +441,7 @@ Essayer d'écrire une règle qui Alerte qu'une tentative de session SSH a été 
 
 ---
 
-**Reponse :**  
+**Reponse : alert tcp any any -> 192.168.0.115 22 (msg:"SSH"; sid:1000018;) même fonctionnement que la règle de la question 9, mais ici on défini le port.**  
 
 ---
 
@@ -450,6 +451,14 @@ Essayer d'écrire une règle qui Alerte qu'une tentative de session SSH a été 
 ---
 
 **Reponse :**  
+````
+[**] [1:1000018:1] SSH connection request [**]
+[Priority: 0] 
+04/04-21:56:54.343870 192.168.0.115.1:46058 -> 192.168.0.134:22
+TCP TTL:64 TOS:0x10 ID:0 IpLen:20 DgmLen:52 DF
+***A**** Seq: 0x6D31D1A  Ack: 0xDA06B002  Win: 0x489  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 2016553581 231678472 
+````
 
 ---
 
@@ -473,7 +482,7 @@ Utiliser l'option correcte de Snort pour analyser le fichier de capture Wireshar
 
 ---
 
-**Reponse : Non, il l'analyse de la même façon.**  
+**Reponse : Non, il l'analyse de la même façon. C'est plus rapide et dans la documentation de snort, ils disent que cela permet des de fonctionnement sur snort**  
 
 ---
 
@@ -533,7 +542,7 @@ Reprendre l'exercice de la partie [Trouver votre nom](#trouver-votre-nom-). Essa
 
 ---
 
-**Reponse :**  
+**Reponse :snort ne lève pas d'alerte**  
 
 ---
 
@@ -545,7 +554,7 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-**Reponse :**  
+**Reponse : snort lève une alerte**  
 
 ---
 
