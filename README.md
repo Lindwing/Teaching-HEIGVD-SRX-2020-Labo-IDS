@@ -310,7 +310,7 @@ alert tcp any any -> any any (msg:"Mon nom!"; content:"Rubinstein"; sid:4000015;
 
 ---
 
-**Reponse :**  
+**Reponse :si dans un paquet tcp de n'importe qu'elle source et de n'importe qu'elle destination, snort trouve le mot Rubinstein(sensible à la casse), il afficher une alerte accompagné du message Mon nom!**  
 
 ---
 
@@ -344,7 +344,7 @@ Arrêter Snort avec `CTRL-C`.
 
 ---
 
-**Reponse :**  
+**Reponse : il affiche un grand tableau avec plein d'information. La durée d'exécution, le nombre de paquets traité, le débit du nombre de paquets à la minute et à la seconde. la partie suivante indique le nombre de paquet analisé, filtré, droppé, injecté ou en cours de traitement. La partie beakdown by protocol indique quel protocole itilise les paquets traité. La dernière partie du tableau indique ce que snort a fait des paquets analisé.**  
 
 ---
 
