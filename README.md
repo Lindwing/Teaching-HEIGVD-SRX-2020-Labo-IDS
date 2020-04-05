@@ -371,8 +371,7 @@ Ecrire une règle qui journalise (sans alerter) un message à chaque fois que Wi
 
 ---
 
-**Reponse :**  
-log tcp 91.198.174.192 any -> 192.134.221.99  any (msg:"Wikipedia";)
+**Reponse : log tcp adresss ip station any -> 77.56.228.93 any (msg:"Wikipedia"; sid:4000016;). Il a été journalisé dans un fichier log dans /var/snort/ . le paquet envoyé par wikipedia**  
 ---
 
 --
