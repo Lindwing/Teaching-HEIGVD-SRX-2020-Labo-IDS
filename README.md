@@ -355,12 +355,11 @@ Aller au répertoire /var/log/snort. Ouvrir le fichier `alert`. Vérifier qu'il 
 
 ---
 
-**Reponse :[**] [1:4000015:1] Mon nom! [**] **  le premier numéro c'est le Generator Id qui représente le componet de snort qui a gébnérer l'alerte. Dans ce cas ci le numéro 1 c'est GENERATOR_SNORT_ENGINE.
+**Reponse :[\**] [1:4000015:1] Mon nom! [\**]   le premier numéro c'est le Generator Id qui représente le componet de snort qui a gébnérer l'alerte. Dans ce cas ci le numéro 1 c'est GENERATOR_SNORT_ENGINE.
 Le deuxième nombre c'est le SID qu'on a défini et le troisième nombre c'est le revision ID qu'on a aussi défini. Mon nom! correspond au message qu'on a défini.
-La deuxième ligne défini l'importance de l'alerte et la troisième la date du log. La dernière ligne contient des informations contenu dans le paquet ip (protocole,id,etc.)
+La deuxième ligne défini l'importance de l'alerte et la troisième la date du log. La dernière ligne contient des informations contenu dans le paquet ip (protocole,id,etc.)**
 
 ---
-
 
 --
 
@@ -385,7 +384,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse : alert icmp any any -> 192.168.0.115 any (msg: "ICMP"; sid:1000017;) **  
+**Reponse : alert icmp any any -> 192.168.0.115 any (msg: "ICMP"; sid:1000017;)**  
 
 ---
 
@@ -394,7 +393,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse : la flèche -> permet de définir que les paquets avec comme ip de destination l'ip de notre station **  
+**Reponse : la flèche -> permet de définir que les paquets avec comme ip de destination l'ip de notre station**  
 
 ---
 
@@ -406,7 +405,6 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 **Reponse : dans /var/log/snort/alert  et dans /var/log/snort/snort.log.xxxx**  
 
 ---
-
 
 **Question 12: Qu'est-ce qui a été journalisé ?**
 
@@ -457,7 +455,7 @@ Essayer d'écrire une règle qui Alerte qu'une tentative de session SSH a été 
 04/04-21:56:54.343870 192.168.0.115.1:46058 -> 192.168.0.134:22
 TCP TTL:64 TOS:0x10 ID:0 IpLen:20 DgmLen:52 DF
 ***A**** Seq: 0x6D31D1A  Ack: 0xDA06B002  Win: 0x489  TcpLen: 32
-TCP Options (3) => NOP NOP TS: 2016553581 231678472 
+TCP Options (3) => NOP NOP TS: 5717153693 573650085
 ````
 
 ---
@@ -472,7 +470,7 @@ Lancer Wireshark et faire une capture du trafic sur l'interface connectée au br
 
 ---
 
-**Reponse : -r **  
+**Reponse : -r **
 
 ---
 
@@ -504,12 +502,11 @@ Faire des recherches à propos des outils `fragroute` et `fragtest`.
 
 ---
 
-**Reponse : fragroute intercepts, modifies, and rewrites egress traffic destined for a specified host, implementing most of the attacks described in the Secure Networks “Insertion, Evasion, and Denial of Service: Eluding Network Intrusion Detection” paper of January 1998.
+**Reponse : fragroute intercepts, modifies, and rewrites egress traffic destined for a specified host, implementing most of the attacks described in the Secure Networks “Insertion, Evasion, and Denial of Service: Eluding Network Intrusion Detection” paper of January 1998.**
 
-En gros ca contourne les NIDs (fragtest aussi)**  
+**En gros ca contourne les NIDs (fragtest aussi)**  
 
 ---
-
 
 **Question 21: Quel est le principe de fonctionnement ?**
 
@@ -524,19 +521,18 @@ En gros ca contourne les NIDs (fragtest aussi)**
 
 ---
 
-**Reponse : Il s'agit du moyen de "défense" de snort. C'est un module de snort qui a pour but (principal) d'empecher les stratégies du dessus:
+**Reponse : Il s'agit du moyen de "défense" de snort. C'est un module de snort qui a pour but (principal) d'empecher les stratégies du dessus:**
 
-The frag3 preprocessor is a target-based IP defragmentation module for Snort. Frag3 is designed with the following goals:
+**The frag3 preprocessor is a target-based IP defragmentation module for Snort. Frag3 is designed with the following goals:**
 
-1) Faster execution with less complex data management.
+**1) Faster execution with less complex data management.**
 
-2) Target-based host modeling anti-evasion techniques.**  
+**2) Target-based host modeling anti-evasion techniques.**
 
 ---
 
 
 Reprendre l'exercice de la partie [Trouver votre nom](#trouver-votre-nom-). Essayer d'offusquer la détection avec `fragroute`.
-
 
 **Question 23: Quel est le résultat de votre tentative ?**
 
@@ -549,15 +545,13 @@ Reprendre l'exercice de la partie [Trouver votre nom](#trouver-votre-nom-). Essa
 
 Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocessor` et refaire la tentative.
 
-
 **Question 24: Quel est le résultat ?**
 
 ---
 
-**Reponse : snort lève une alerte**  
+**Reponse : snort lève une alerte**
 
 ---
-
 
 **Question 25: A quoi sert le `SSL/TLS Preprocessor` ?**
 
@@ -566,7 +560,6 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 **Reponse : il sert simplement à analyser les partie non chifrées de paquest sécurisé SSL/TLS (typiquement le header) **  
 
 ---
-
 
 **Question 26: A quoi sert le `Sensitive Data Preprocessor` ?**
 
@@ -577,7 +570,6 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 ---
 
 ### Conclusions
-
 
 **Question 27: Donnez-nous vos conclusions et votre opinion à propos de snort **
 
