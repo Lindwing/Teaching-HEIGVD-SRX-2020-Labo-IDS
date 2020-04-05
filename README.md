@@ -463,7 +463,7 @@ Lancer Wireshark et faire une capture du trafic sur l'interface connectée au br
 
 ---
 
-**Reponse :**  
+**Reponse : -r **  
 
 ---
 
@@ -473,7 +473,7 @@ Utiliser l'option correcte de Snort pour analyser le fichier de capture Wireshar
 
 ---
 
-**Reponse :**  
+**Reponse : Non, il l'analyse de la même façon.**  
 
 ---
 
@@ -481,7 +481,7 @@ Utiliser l'option correcte de Snort pour analyser le fichier de capture Wireshar
 
 ---
 
-**Reponse :**  
+**Reponse : oui, les alertes sont aussi enregistré**  
 
 ---
 
