@@ -286,7 +286,10 @@ Vous pouvez aussi utiliser des captures Wireshark ou des fichiers snort.log.xxxx
 
 ---
 
-**Reponse : L'explication du manuel de snort : They allow the functionality of Snort to be extended by allowing users and programmers to drop modular plugins into Snort fairly easily. Preprocessor code is run before the detection engine is called, but after the packet has been decoded. The packet can be modified or analyzed in an out-of-band manner using this mechanism. **  
+**Réponse : L'explication du manuel de snort :** 
+```
+They allow the functionality of Snort to be extended by allowing users and programmers to drop modular plugins into Snort fairly easily. Preprocessor code is run before the detection engine is called, but after the packet has been decoded. The packet can be modified or analyzed in an out-of-band manner using this mechanism.
+```
 
 ---
 
@@ -294,7 +297,7 @@ Vous pouvez aussi utiliser des captures Wireshark ou des fichiers snort.log.xxxx
 
 ---
 
-**Reponse : Ce message signifie que aucun préprocesseur snort n'a été loadé, cela est peut-être dû à un problème de droit sur le dossier qui contient le fichier de configuration snort ou alors dans le fcihier de configuration on a pas activer les preprocesseurs**  
+**Réponse : Ce message signifie que aucun préprocesseur snort n'a été loadé, cela est peut-être dû à un problème de droit sur le dossier qui contient le fichier de configuration snort ou alors dans le fichier de configuration on a pas activer les préprocesseurs**  
 
 ---
 
@@ -310,7 +313,7 @@ alert tcp any any -> any any (msg:"Mon nom!"; content:"Rubinstein"; sid:4000015;
 
 ---
 
-**Reponse :si dans un paquet tcp de n'importe qu'elle source et de n'importe qu'elle destination, snort trouve le mot Rubinstein(sensible à la casse), il afficher une alerte accompagné du message Mon nom!**  
+**Réponse :si dans un paquet tcp de n'importe qu'elle source et de n'importe qu'elle destination, snort trouve le mot Rubinstein(sensible à la casse), il afficher une alerte accompagné du message Mon nom!**  
 
 ---
 
@@ -324,7 +327,7 @@ sudo snort -c myrules.rules -i eth0
 
 ---
 
-**Reponse : Il annonce qu'il initialise snort, puis il initialise les règles, puis il affiche un tableau avec le récapulatif des rule port, puis il met des informations sur la config des filtres, puis il affiche l'ordre d'application des règles et vérifie les configurations preprocesseurs, puis un tableau Port Based Pattern Matching Memory, lance DAQ et affiche la version de snort.**  
+**Réponse : Il annonce qu'il initialise snort, puis il initialise les règles, puis il affiche un tableau avec le récapitulatif des rule port, puis il met des informations sur la config des filtres, puis il affiche l'ordre d'application des règles et vérifie les configurations préprocesseurs, puis un tableau Port Based Pattern Matching Memory, lance DAQ et affiche la version de snort.**  
 
 ---
 
@@ -334,7 +337,7 @@ Aller à un site web contenant dans son text votre nom ou votre mot clé que vou
 
 ---
 
-**Reponse : Mon terminal n'affiche rien. Je ne sais pas pourquoi.**  
+**Réponse : Mon terminal n'affiche rien. Je ne sais pas pourquoi.**  
 
 ---
 
@@ -344,7 +347,7 @@ Arrêter Snort avec `CTRL-C`.
 
 ---
 
-**Reponse : il affiche un grand tableau avec plein d'information. La durée d'exécution, le nombre de paquets traité, le débit du nombre de paquets à la minute et à la seconde. la partie suivante indique le nombre de paquet analisé, filtré, droppé, injecté ou en cours de traitement. La partie beakdown by protocol indique quel protocole itilise les paquets traité. La dernière partie du tableau indique ce que snort a fait des paquets analisé.**  
+**Réponse : il affiche un grand tableau avec plein d'information. La durée d'exécution, le nombre de paquets traité, le débit du nombre de paquets à la minute et à la seconde. la partie suivante indique le nombre de paquet analysé, filtré, droppé, injecté ou en cours de traitement. La partie beakdown by protocol indique quel protocole utilise les paquets traité. La dernière partie du tableau indique ce que snort a fait des paquets analysé.**  
 
 ---
 
@@ -355,8 +358,8 @@ Aller au répertoire /var/log/snort. Ouvrir le fichier `alert`. Vérifier qu'il 
 
 ---
 
-**Reponse :[\****] [1:4000015:1] Mon nom! [\****]   le premier numéro c'est le Generator Id qui représente le componet de snort qui a gébnérer l'alerte. Dans ce cas ci le numéro 1 c'est GENERATOR_SNORT_ENGINE.
-Le deuxième nombre c'est le SID qu'on a défini et le troisième nombre c'est le revision ID qu'on a aussi défini. Mon nom! correspond au message qu'on a défini.
+**Réponse :[\****] [1:4000015:1] Mon nom! [\****]   le premier numéro c'est le Generator Id qui représente le component de snort qui a généré l'alerte. Dans ce cas ci le numéro 1 c'est GENERATOR_SNORT_ENGINE.
+Le deuxième nombre c'est le SID qu'on a défini et le troisième nombre c'est le révision ID qu'on a aussi défini. Mon nom! correspond au message qu'on a défini.
 La deuxième ligne défini l'importance de l'alerte et la troisième la date du log. La dernière ligne contient des informations contenu dans le paquet ip (protocole,id,etc.)**
 
 ---
@@ -371,7 +374,8 @@ Ecrire une règle qui journalise (sans alerter) un message à chaque fois que Wi
 
 ---
 
-**Reponse : log tcp any any -> 91.198.174.192 any (msg:"Wikipedia"; sid:4000016;). Il a été journalisé dans un fichier snort.log.xxxx dans /var/snort/ . le paquet envoyé est enregistré**  
+**Réponse : log tcp any any -> 91.198.174.192 any (msg:"Wikipedia"; sid:4000016;). Il a été journalisé dans un fichier snort.log.xxxx dans /var/snort/ . le paquet envoyé est enregistré**  
+
 ---
 
 --
@@ -384,7 +388,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse : alert icmp any any -> 192.168.0.115 any (msg: "ICMP"; sid:1000017;)**  
+**Réponse : alert icmp any any -> 192.168.0.115 any (msg: "ICMP"; sid:1000017;)**  
 
 ---
 
@@ -393,7 +397,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse : la flèche -> permet de définir que les paquets avec comme ip de destination l'ip de notre station**  
+**Réponse : la flèche -> permet de définir que les paquets avec comme ip de destination l'ip de notre station**  
 
 ---
 
@@ -402,7 +406,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse : dans /var/log/snort/alert  et dans /var/log/snort/snort.log.xxxx**  
+**Réponse : dans /var/log/snort/alert  et dans /var/log/snort/snort.log.xxxx**  
 
 ---
 
@@ -410,7 +414,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse :le contenu de l'alerte et le paquet qui provoqué l'alerte**  
+**Réponse :le contenu de l'alerte et le paquet qui provoqué l'alerte**  
 
 ---
 
@@ -420,11 +424,11 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 Modifier votre règle pour que les pings soient détectés dans les deux sens.
 
-**Question 13: Qu'est-ce que vous avez modifié pour que la règle détecte maintenant le trafic dans les deux senses ?**
+**Question 13: Qu'est-ce que vous avez modifié pour que la règle détecte maintenant le trafic dans les deux sens ?**
 
 ---
 
-**Reponse : alert icmp any any <> 192.168.0.115 any (msg: "ICMP"; sid:1000017;) nous avons remplacé la flèche par <> ce qui indique les deux directions**  
+**Réponse : alert icmp any any <> 192.168.0.115 any (msg: "ICMP"; sid:1000017;) nous avons remplacé la flèche par <> ce qui indique les deux directions**  
 
 ---
 
@@ -439,7 +443,7 @@ Essayer d'écrire une règle qui Alerte qu'une tentative de session SSH a été 
 
 ---
 
-**Reponse : alert tcp any any -> 192.168.0.115 22 (msg:"SSH"; sid:1000018;) même fonctionnement que la règle de la question 9, mais ici on défini le port.**  
+**Réponse : alert tcp any any -> 192.168.0.115 22 (msg:"SSH"; sid:1000018;) même fonctionnement que la règle de la question 9, mais ici on défini le port.**  
 
 ---
 
@@ -448,7 +452,8 @@ Essayer d'écrire une règle qui Alerte qu'une tentative de session SSH a été 
 
 ---
 
-**Reponse :**  
+**Réponse :**  
+
 ````
 [**] [1:1000018:1] SSH connection request [**]
 [Priority: 0] 
@@ -470,17 +475,17 @@ Lancer Wireshark et faire une capture du trafic sur l'interface connectée au br
 
 ---
 
-**Reponse : -r**
+**Réponse : -r**
 
 ---
 
 Utiliser l'option correcte de Snort pour analyser le fichier de capture Wireshark.
 
-**Question 17: Quelle est le comportement de Snort avec un fichier de capture ? Y-a-t'il une difference par rapport à l'analyse en temps réel ?**
+**Question 17: Quelle est le comportement de Snort avec un fichier de capture ? Y-a-t'il une différence par rapport à l'analyse en temps réel ?**
 
 ---
 
-**Reponse : Non, il l'analyse de la même façon. C'est plus rapide et dans la documentation de snort, ils disent que cela permet des de fonctionnement sur snort**  
+**Réponse : Non, il l'analyse de la même façon. C'est plus rapide et dans la documentation de snort, ils disent que cela permet des de fonctionnement sur snort**  
 
 ---
 
@@ -488,7 +493,7 @@ Utiliser l'option correcte de Snort pour analyser le fichier de capture Wireshar
 
 ---
 
-**Reponse : oui, les alertes sont aussi enregistré**  
+**Réponse : oui, les alertes sont aussi enregistré**  
 
 ---
 
@@ -502,9 +507,11 @@ Faire des recherches à propos des outils `fragroute` et `fragtest`.
 
 ---
 
-**Reponse : fragroute intercepts, modifies, and rewrites egress traffic destined for a specified host, implementing most of the attacks described in the Secure Networks “Insertion, Evasion, and Denial of Service: Eluding Network Intrusion Detection” paper of January 1998.**
+```
+Reponse : fragroute intercepts, modifies, and rewrites egress traffic destined for a specified host, implementing most of the attacks described in the Secure Networks “Insertion, Evasion, and Denial of Service: Eluding Network Intrusion Detection” paper of January 1998.
+```
 
-**En gros ca contourne les NIDs (fragtest aussi)**  
+**En bref, ça contourne les NIDs (fragtest aussi)**  
 
 ---
 
@@ -512,7 +519,7 @@ Faire des recherches à propos des outils `fragroute` et `fragtest`.
 
 ---
 
-**Reponse :Ils fonctionnent en fractionnant les paquets, puis tentent de contourner les regles mises en place par avec ces fractions de paquets **  
+**Réponse :Ils fonctionnent en fractionnant les paquets, puis tentent de contourner les règles mises en place par avec ces fractions de paquets **  
 
 ---
 
@@ -521,14 +528,15 @@ Faire des recherches à propos des outils `fragroute` et `fragtest`.
 
 ---
 
-**Reponse : Il s'agit du moyen de "défense" de snort. C'est un module de snort qui a pour but (principal) d'empecher les stratégies du dessus:**
+**Réponse : Il s'agit du moyen de "défense" de snort. C'est un module de snort qui a pour but  empêcher les stratégies de défragmentation  du dessus:**
 
-**The frag3 preprocessor is a target-based IP defragmentation module for Snort. Frag3 is designed with the following goals:**
+```
+The frag3 preprocessor is a target-based IP defragmentation module for Snort. Frag3 is designed with the following goals:
 
-**1) Faster execution with less complex data management.**
+1) Faster execution with less complex data management.
 
-**2) Target-based host modeling anti-evasion techniques.**
-
+2) Target-based host modeling anti-evasion techniques.
+```
 ---
 
 
@@ -538,7 +546,7 @@ Reprendre l'exercice de la partie [Trouver votre nom](#trouver-votre-nom-). Essa
 
 ---
 
-**Reponse :snort ne lève pas d'alerte**  
+**Réponse : snort ne lève pas d'alerte**  
 
 ---
 
@@ -549,7 +557,7 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-**Reponse : snort lève une alerte**
+**Réponse : snort lève une alerte**
 
 ---
 
@@ -557,7 +565,7 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-**Reponse : il sert simplement à analyser les partie non chifrées de paquest sécurisé SSL/TLS (typiquement le header)**  
+**Réponse : il sert simplement à analyser les partie non chiffrées de paquets sécurisé SSL/TLS (typiquement le header)**  
 
 ---
 
@@ -565,7 +573,7 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-**Reponse : Comme son nom le sous-entend, elle filtre les données sensibles (identité, numéro telephone/bancaire, email et autres)**  
+**Réponse : Comme son nom le sous-entend, elle filtre les données sensibles (identité, numéro téléphone/bancaire, email et autres)**  
 
 ---
 
@@ -575,7 +583,7 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-**Reponse : Snort semble être très complet et puissant, mais tout aussi compliqué. Le nombre de possibilité donne parfois le vertige.**
+**Réponse : Snort semble être très complet et puissant, mais tout aussi compliqué. Le nombre de possibilité donne parfois le vertige. Malgré tout , ce laboratoire a été très interréssant**
 
 ---
 
