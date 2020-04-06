@@ -355,7 +355,7 @@ Aller au répertoire /var/log/snort. Ouvrir le fichier `alert`. Vérifier qu'il 
 
 ---
 
-**Reponse :[\**] [1:4000015:1] Mon nom! [\**]   le premier numéro c'est le Generator Id qui représente le componet de snort qui a gébnérer l'alerte. Dans ce cas ci le numéro 1 c'est GENERATOR_SNORT_ENGINE.
+**Reponse :[\****] [1:4000015:1] Mon nom! [\****]   le premier numéro c'est le Generator Id qui représente le componet de snort qui a gébnérer l'alerte. Dans ce cas ci le numéro 1 c'est GENERATOR_SNORT_ENGINE.
 Le deuxième nombre c'est le SID qu'on a défini et le troisième nombre c'est le revision ID qu'on a aussi défini. Mon nom! correspond au message qu'on a défini.
 La deuxième ligne défini l'importance de l'alerte et la troisième la date du log. La dernière ligne contient des informations contenu dans le paquet ip (protocole,id,etc.)**
 
@@ -470,7 +470,7 @@ Lancer Wireshark et faire une capture du trafic sur l'interface connectée au br
 
 ---
 
-**Reponse : -r **
+**Reponse : -r**
 
 ---
 
@@ -557,7 +557,7 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-**Reponse : il sert simplement à analyser les partie non chifrées de paquest sécurisé SSL/TLS (typiquement le header) **  
+**Reponse : il sert simplement à analyser les partie non chifrées de paquest sécurisé SSL/TLS (typiquement le header)**  
 
 ---
 
@@ -565,7 +565,7 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-**Reponse : Comme son nom le sous-entend, elle filtre les données sensibles (identité, numéro telephone/bancaire, email et autres) **  
+**Reponse : Comme son nom le sous-entend, elle filtre les données sensibles (identité, numéro telephone/bancaire, email et autres)**  
 
 ---
 
@@ -575,9 +575,8 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-**Reponse : Snort semble être très complet et puissant, mais tout aussi compliqué. Le nombre de possibilité donne parfois le vertige. **  
+**Reponse : Snort semble être très complet et puissant, mais tout aussi compliqué. Le nombre de possibilité donne parfois le vertige.**
 
 ---
-
 
 <sub>This guide draws heavily on http://cs.mvnu.edu/twiki/bin/view/Main/CisLab82014</sub>
